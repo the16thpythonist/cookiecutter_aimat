@@ -13,7 +13,7 @@ process of creating a basic structure of the code that you'll be using to conduc
 your project. 
 
 This structure will be created by the cookiecutter_ 🍪 template that is implemented in this repository. cookiecutter_ 
-is a project intended to simplify the setup up python projects in general by providing an interface to instantiate 
+is a project intended to simplify the setup of python projects in general by providing an interface to instantiate 
 and customize project templates found on the web.
 
     Please note that this template is just a *recommendation*. If you want to built the code structure completely 
@@ -28,10 +28,52 @@ and customize project templates found on the web.
 Before we get right into how to instantiate this template for your own project, 
 here are the most notable features that this template provides for you.
 
-- **ready to release.** The template structure will allow you to install the template on your own. 
-- **readme documentation outline.** The template will already create a large portion of your project's own ``README.rst`` 
-  file which will serve as part of your project documenation. This will in turn help the group to make use of your code even 
-  after you finish your project with us.
+- **best practices for re-use.** Most importantly, this template will set up your project according to a series of 
+  coding best practices that will make it easier for the code to remain useful to the group even after you finish
+  your project!
+- **ready for documentation.** The template will already create a large portion of your own project's ``README.rst`` file 
+  which will be the starting point of your project documentation.
+- **ready for release.** The template sets up the necessary folder structure and configuration files which are required 
+  to publish the code to the python package index to make it installable via ``pip`` for example.
+- **ready for unit testing.** The template includes some useful utilities in case you want to get started with 
+  unittesting_ your code.
+
+==================
+🚀 Getting Started
+==================
+
+To get started with your project setup, first make sure that you have python and pip installed on your system.
+
+.. code-block:: console
+
+    python3 --version
+
+Then install cookiecutter_ like this:
+
+.. code-block:: console
+
+    pip3 install cookiecutter
+
+You can then use the cookiecutter command line interface to locally instantiate this template by using the URL of the 
+github repository.
+
+.. code-block:: console
+
+    cookiecutter https://github.com/the16thpythonist/cookiecutter_aimat
+
+**Configuration. ** executing the above command will present you with a series of input prompts in which you are able to 
+enter data to customize the code generated for your project.
+
+The following table provides an overview of the various prompts and brief descriptions of their purpose.
+
+.. list-table:: Title
+
+    :header-rows: 1
+
+    * - input prompt
+      - description
+    * - ``project_slug``
+      - the name of the element.
 
 ==========
 📨 Contact
@@ -46,10 +88,11 @@ If you have any other questions specifically regarding this template, feel free 
 
 In this section we provide a number of additional resources you can read on your own.
 
-🖥️ Programming in General
-=========================
+🖥️ Python Programming
+=====================
 
 - Learn Python the Hard Way
 
 .. _AIMAT: https://aimat.iti.kit.edu/
 .. _cookiecutter: https://github.com/cookiecutter/cookiecutter
+.. _unittesting: https://medium.com/interleap/intro-to-unit-tests-f2b7750c2d3c
