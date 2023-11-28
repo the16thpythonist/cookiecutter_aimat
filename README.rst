@@ -74,7 +74,13 @@ prompt                              description
 ==================================  ===================================================================================================== 
 ``project_slug``                    The name of your project  
 ``github_username``                 This is also a thing
+==================================  =====================================================================================================
 
+==============
+🐾 First Steps
+==============
+
+After the above instantiation of the repository has been completed 
 
 ==============================
 🖊️ Notes on Naming Conventions
