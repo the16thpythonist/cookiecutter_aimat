@@ -61,19 +61,18 @@ github repository.
 
     cookiecutter https://github.com/the16thpythonist/cookiecutter_aimat
 
-**Configuration. ** executing the above command will present you with a series of input prompts in which you are able to 
+**Configuration.** executing the above command will present you with a series of input prompts in which you are able to 
 enter data to customize the code generated for your project.
+
+.. 
+    https://tableconvert.com/restructuredtext-generator
 
 The following table provides an overview of the various prompts and brief descriptions of their purpose.
 
-.. list-table:: Title
-
-    :header-rows: 1
-
-    * - input prompt
-      - description
-    * - ``project_slug``
-      - the name of the element.
+ ================== ========================== 
+  prompt             description               
+ ================== ========================== 
+  ``project_slug``   The name of your project  
 
 ==========
 📨 Contact
