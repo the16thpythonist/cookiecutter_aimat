@@ -5,3 +5,33 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
+description = "Insert project description here"
+license = "{{ cookiecutter.license }}"
+authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.auhtor_email }}>"]
+maintainers = ["{{ cookiecutter.author_name }} <{{ cookiecutter.auhtor_email }}>"]
+keywords = []
+packages = [
+    { include = "{{ cookiecutter.project_slug }}" },
+    { include = "{{ cookiecutter.project_slug }}/experiments" },
+]
+include = [
+    "{{ cookiecutter.project_slug }}/VERSION"
+]
+
+# Code dependencies
+# =================
+# put all of your dependencies here.
+
+[tool.poetry.dependencies]
+python = ">=3.8.0,<4.0"
+poetry-bumpversion = ">=0.3.0"
+
+# Bumpversion plugin
+# ==================
+# This section configures the poetry plugin which helps with the versioning.
+
+# With this configuration we tell he plugin that the content of the "VERSION" file should be 
+# automatically changed every time that we change the version through the plugin.
+[tool.poetry_bumpversion.file."{{ cookiecutter.directory_name }}/VERSION"]
+search = "{current_version}"
+replace = "{new_version}"
