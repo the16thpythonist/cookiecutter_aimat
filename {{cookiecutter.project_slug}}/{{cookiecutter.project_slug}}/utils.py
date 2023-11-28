@@ -7,7 +7,8 @@ import pathlib
 # GLOBAL VARIABLES
 # ================
 
-# This is the absolute string path to the folder that contains all the code modules.
+# This is the absolute string path to the folder that contains all the code modules. Use this whenever 
+# you need to access files from within the project folder.
 PATH: str = pathlib.Path(__file__).parent.absolute()
 
 # Based on the package path we can now define the more specific sub paths

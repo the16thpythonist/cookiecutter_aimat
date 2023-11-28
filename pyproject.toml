@@ -11,7 +11,7 @@ authors = ["Jonas Teufel <jonseb1998@gmail.com>"]
 maintainers = ["Jonas Teufel <jonseb1998@gmail.com>"]
 keywords = []
 packages = [
-    { include = "{{ cookiecutter.directory_name }}" },
+    { include = "{{cookiecutter.project_slug}}" },
 ]
 include = [
     "README.rst",
