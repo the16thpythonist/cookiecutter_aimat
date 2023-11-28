@@ -23,7 +23,7 @@ First, clone the repository:
 
 .. code-block:: console
 
-    git clone {{ cookiecutter.repo_url }}
+    git clone {your repo url}
 
 Install using ``pip``:
 

@@ -7,15 +7,18 @@ name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
 description = "Insert project description here"
 license = "{{ cookiecutter.license }}"
-authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.auhtor_email }}>"]
-maintainers = ["{{ cookiecutter.author_name }} <{{ cookiecutter.auhtor_email }}>"]
+authors = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
+maintainers = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"]
 keywords = []
 packages = [
     { include = "{{ cookiecutter.project_slug }}" },
     { include = "{{ cookiecutter.project_slug }}/experiments" },
+    { include = "{{ cookiecutter.project_slug }}/scripts" },
 ]
 include = [
-    "{{ cookiecutter.project_slug }}/VERSION"
+    "{{ cookiecutter.project_slug }}/VERSION",
+    "{{ cookiecutter.project_slug }}/scripts/*.rst",
+    "{{ cookiecutter.project_slug }}/scripts/*.sh",
 ]
 
 # Code dependencies
@@ -33,6 +36,6 @@ poetry-bumpversion = ">=0.3.0"
 
 # With this configuration we tell he plugin that the content of the "VERSION" file should be 
 # automatically changed every time that we change the version through the plugin.
-[tool.poetry_bumpversion.file."{{ cookiecutter.directory_name }}/VERSION"]
+[tool.poetry_bumpversion.file."{{ cookiecutter.project_slug }}/VERSION"]
 search = "{current_version}"
 replace = "{new_version}"

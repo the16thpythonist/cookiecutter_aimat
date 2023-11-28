@@ -47,5 +47,6 @@ def prepare_poetry(project_path: str,
     # and we also need to make sure to switch to the correct environment
     run_command(f'{poetry} env use {venv.python}', cwd=project_path)
     run_command(f'{poetry} --no-cache install', cwd=project_path)
+    # run_command(f'{poetry} install pytest', cwd=project_path)
 
     return poetry, project_path
