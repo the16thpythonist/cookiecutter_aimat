@@ -69,10 +69,11 @@ enter data to customize the code generated for your project.
 
 The following table provides an overview of the various prompts and brief descriptions of their purpose.
 
-================================== =====================================================================================================
-prompt                             description               
-================================== ===================================================================================================== 
-``project_slug``                   The name of your project  
+==================================  =====================================================================================================
+prompt                              description               
+==================================  ===================================================================================================== 
+``project_slug``                    The name of your project  
+``github_username``                 This is also a thing
 
 
 ==============================
