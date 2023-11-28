@@ -20,7 +20,8 @@ include = [
 
 # Code dependencies
 # =================
-# put all of your dependencies here.
+# this section is used to define all the packages which you depend on. So as soon as you start using 
+# additional packages they should be added here.
 
 [tool.poetry.dependencies]
 python = ">=3.8.0,<4.0"

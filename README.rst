@@ -95,8 +95,33 @@ structure, further references to online material and other useful information!
 🖊️ Notes on Naming Conventions
 ==============================
 
-Naming your project
+One important step in the development of your project is to create a name for your code package. Here, it makes sense to spend some 
+time to come up with good name. Especially, if you are planning to release your code for other people to use, it is important to 
+choose a name which other people can understand easily.
 
+**use snake case.** To stay consistent with the common python naming convention, create a name in *snake case* which means 
+only consisting of *lower case characters* and using *underscores* as whitespaces.
+
+.. code-block:: bash
+
+    LanguageModelsAre-GREAT                         # Bad
+    language_models_are_great                       # Better
+
+**be descriptive.** Make sure that the name is descriptive of your project and that it can also be understood by others.
+
+.. code-block:: bash
+
+    my_thesis_project                               # Bad
+    crystal_gnn_benchmarks                          # Better
+
+**be concise.** On the other hand you also don't want your project name to be a 
+
+.. code-block:: bash
+
+    benchmark_framework_for_gnns_and_crystals       # Bad
+    crystal_gnn_benchmarks                          # Better
+    crstl_gnn_bench                                 # Also OK
+    cgnnb                                           # Bad
 
 ==========
 📨 Contact
