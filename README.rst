@@ -64,23 +64,32 @@ github repository.
 **Configuration.** executing the above command will present you with a series of input prompts in which you are able to 
 enter data to customize the code generated for your project.
 
-.. 
-    https://tableconvert.com/restructuredtext-generator
-
 The following table provides an overview of the various prompts and brief descriptions of their purpose.
 
 ==================================  =====================================================================================================
 prompt                              description               
 ==================================  ===================================================================================================== 
-``project_slug``                    The name of your project  
-``github_username``                 This is also a thing
+``project_slug``                    The name of your project. For one thing, this will be the name of the project folder that will be 
+                                    created through this template. It will also be the name of your github repository.
+                                    Choose this name wisely, as it will be hard to change later on. For that purpose see the notes 
+                                    on naming conventions further down below. 
+``author_name``                     Your first and last name. This will serve as contact information for the potential relase of
+                                    the package.
+``author_email``                    Your email address. This will be part of your contact information for the package.
+``version``                         The version with which your project will be initialized. For this it is recommended to keep the 
+                                    default value of ``0.1.0``. You'll be able to increment the version as you start developing the 
+                                    project.
 ==================================  =====================================================================================================
 
 ==============
 🐾 First Steps
 ==============
 
-After the above instantiation of the repository has been completed 
+After the above instantiation of the repository was completed sucessfully, it will have created a new folder with the name 
+given as ``project_slug``.
+
+As a first step, it makes sense to carefully read the ``DEVELOP.rst`` file. It contains explanations about the general project 
+structure, further references to online material and other useful information!
 
 ==============================
 🖊️ Notes on Naming Conventions
@@ -95,18 +104,3 @@ Naming your project
 
 If you have any other questions specifically regarding this template, feel free to contact: 
 `jonas.teufel@kit.edu <jonas.teufel@kit.edu>`_
-
-=======================
-📚 Additional Resources
-=======================
-
-In this section we provide a number of additional resources you can read on your own.
-
-🖥️ Python Programming
-=====================
-
-- Learn Python the Hard Way
-
-.. _AIMAT: https://aimat.iti.kit.edu/
-.. _cookiecutter: https://github.com/cookiecutter/cookiecutter
-.. _unittesting: https://medium.com/interleap/intro-to-unit-tests-f2b7750c2d3c

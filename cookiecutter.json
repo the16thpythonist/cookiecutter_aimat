@@ -1,6 +1,5 @@
 {
-    "directory_name": "materials_ai",
-    "project_slug": "{{ cookiecutter.director_name }}",
+    "project_slug": "materials_ai",
     "author_name": "John Doe",
     "author_email": "johndoe@gmail.com",
     "github_username": "JohnDoeRocks",
