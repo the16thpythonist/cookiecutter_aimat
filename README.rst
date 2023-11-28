@@ -79,6 +79,9 @@ prompt                              description
 ``version``                         The version with which your project will be initialized. For this it is recommended to keep the 
                                     default value of ``0.1.0``. You'll be able to increment the version as you start developing the 
                                     project.
+``license``                         In this step, the prompt will ask you to decide between a few of the most common options for 
+                                    software licenses. You can read up on `software licences`_ to find out what suits your project best.
+                                    However, the MIT license (default) is often a good choice.
 ==================================  =====================================================================================================
 
 ==============
@@ -114,7 +117,9 @@ only consisting of *lower case characters* and using *underscores* as whitespace
     my_thesis_project                               # Bad
     crystal_gnn_benchmarks                          # Better
 
-**be concise.** On the other hand you also don't want your project name to be a 
+**be concise.** On the other hand you also don't want your project name to be a whole sentence because you'll end up writing 
+that name a lot in the import statments. However, be careful not to lean too much into abbreviations lest the name becomes hard 
+to understand for others.
 
 .. code-block:: bash
 
@@ -129,3 +134,8 @@ only consisting of *lower case characters* and using *underscores* as whitespace
 
 If you have any other questions specifically regarding this template, feel free to contact: 
 `jonas.teufel@kit.edu <jonas.teufel@kit.edu>`_
+
+.. _AIMAT: https://aimat.iti.kit.edu/
+.. _cookiecutter: https://github.com/cookiecutter/cookiecutter
+.. _unittesting: https://medium.com/interleap/intro-to-unit-tests-f2b7750c2d3c
+.. _`software licenses`: https://choosealicense.com/licenses/
