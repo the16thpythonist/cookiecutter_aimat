@@ -1,7 +1,7 @@
 .. image:: /aimat_logo.png
     :alt: The AIMAT group logo
-    :width: 50%
-    :align: middle
+    :width: 100%
+    :align: center
 
 =============================
 👩‍🔬 AIMAT Project Cookiecutter
