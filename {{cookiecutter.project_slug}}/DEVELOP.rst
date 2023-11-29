@@ -255,27 +255,144 @@ own sake. The following sections will introduce the concept of `Semantic Version
 What is Versioning?
 ===================
 
-One of the most commong versioning schemes is called `Semantic Versioning`_. You can read up on it on the 
+A software version is generally one or multiple increasing numbers associated with a software that 
+uniquely identify a specific state of that software that existed at some point in time.
+
+Such versions are important for *dependency management*. The features or at least the specific implementations 
+of a piece of software are very likely to change / evolve over time. Some feature that existed in a popular 
+library 2 years ago might not exist anymore nowadays. However, other software will have been built depending on 
+those features.
+
+Due to this and also other reasons, the practice of software versioning has been widely adapted. In this practice, 
+the developers attach a new and unique version to their software product whenever they release changes to public.
+
+There is some variance in how exactly to structure and manage this "version" software and some different 
+versioning *schemes* exist based on different philosophies.
+One of the most common versioning schemes is called `Semantic Versioning`_ which will be briefly introduced 
+in the next section.
+
+Semantic Versioning
+===================
+
+If you want to know more details, you can read the official specifications here: https://semver.org/
+
+The brief explanation is that in semantic versioning the *version* consists of three different numbers which 
+indicate the state of the software product at different levels of granularity:
+
+.. code-block:: text
+
+    major.minor.patch
+
+- **major** - This is the version at the highest level of granularity. In general, one can expect a software 
+  to have *major* differences between two different major version. More specifically, a change in major version 
+  indicates *backward incompatible* changes of the API. This means that it will generally not be possible anymore to 
+  use a version ``2.0.0`` in all the cases where a version ``1.0.0`` was previously used.
+- **minor** - Between two minor versions of a software one can also expect only *minor* differences - specifically, 
+  minor versions should only include *backward compatible*. So incrementing a minor version *should not* cause any 
+  dependent software to suddently break. Such a version can still be used to implement (substantial) new features 
+  but it will have to be features that only add functionality without requiring a modification of existing functionality.
+- **patch** - The patch version is the smalles level of granularity. This version should only be used to release 
+  bug fixes.
 
 Start Developing Version Zero
 =============================
 
-The semantic versioning scheme presents a bit of a problem in cases...
+One notable exception of the rules listed above is major version zero ``0.x.x``. It is generally reserved for the initial 
+development
+
+Therefore, it is also recommended for you to start with version ``0.1.0`` and then start incrementing the minor version 
+whenever you feel like a substantially new feature is completed.
+
+If, at some point, you feel that all the primary functionality of your pacakge is implemented or your project is slowly 
+coming to an end, you can think about moving your package to a version ``1.0.0``.
 
 ======================
 🌐 Working with Github
 ======================
 
-It is recommended to maintain a github repository.
+It is recommended to maintain a GitHub_ repository. This will serve you as a method of backing up 
+your work and it'll help your supervisor to keep track of your progress.
+
+At the end of your project it will also be the most convenient hand in your code in the form 
+of a github repository as well, which can then be transferred to the official ``aimat-lab``
+account.
 
 Create Local Git Repository
 ===========================
 
+Prior to publishing your code on GitHub, you'll have to create a local ``git`` repository in the top-level project 
+folder (the one containing the ``pyproject.toml``):
+
+.. code-block:: console
+
+    cd {{ cookiecutter.project_slug }}
+    git init .
+
+Then you'll need to add all the files that you want to be part of the repository:
+
+.. code-block:: console
+
+    git add README.rst
+    git add LICENSE
+    git add {{ cookiecutter.project_slug }}/*.py
+    # and so forth...
+
+And finally you can ``commit`` all these files.
+
+.. code-block:: console
+
+    git commit -am "briefly describe the changes made in this commit"
+
 Connect with Github
 ===================
 
+On github you'll have to create a new repository with the same name ``{{ cookiecutter.project_slug }}`` as your 
+project. For this, simply log into your account, navigate to "Your Repisitories" and press "New".
+
+After you have created the repository on github, you can link it with your local git repository using the 
+``remote`` command.
+
+.. code-block:: console
+
+    git remote add origin https://github.com/{your_username}/{{ cookiecutter.project_slug }}.git
+
+This command will create a new remote location called ``origin``.
+
+Then finally you can use the ``push`` command to push your local commits to the remote github repository:
+
+.. code-block:: console
+
+    git push origin master
+
 (Optional) Avoid Two-Factor Authentication
 ==========================================
+
+Recently, GitHub_ has introduced `two-factor authentication`_ which can be a bit annoying since by default 
+github will require an authentication for each ``push`` command
+
+You can avoid the necessity of authenticating for a ``push`` command altogether by setting up the remote 
+github location in a specific manner:
+
+.. code-block:: console
+
+    git remote remove origin
+    git remote add origin https://{your_username}:{your_token}@github.com/{your_username}/{{ cookiecutter.project_slug }}.git
+
+In this method you'll have to supply your authentication details only once in the form of your username and your authentication 
+token. However, you'll have to generate such an authentication token in the "Settings" page of your Github account first.
+
+=====================
+📖 Code Documentation
+=====================
+
+Write a README file
+===================
+
+Document API with DocStrings
+============================
+
+How to write useful comments
+============================
 
 =======================
 📚 Additional Resources
@@ -290,3 +407,5 @@ This section compiles a number of useful resources that might be helpful during 
 .. _Poetry: https://python-poetry.org/
 .. _PyPi: https://pypi.org/
 .. _`Semantic Versioning`: https://semver.org/
+.. _GitHub:: https://github.com/
+.. _`two-factor authentication`:: https://en.wikipedia.org/wiki/Multi-factor_authentication
