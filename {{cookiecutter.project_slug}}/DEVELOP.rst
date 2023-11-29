@@ -203,7 +203,7 @@ In a more concrete example for your own project it would work something like thi
 
     # concrete examples of absolute imports
     import {{ cookiecutter.project_slug }}.visualization.molecules as vis
-    from {{ cookecutter.project_slug }}.models.gnn import GcnModel
+    from {{ cookiecutter.project_slug }}.models.gnn import GcnModel
 
 =====================
 🕰️ Package Versioning
