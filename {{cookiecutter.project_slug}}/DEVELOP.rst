@@ -30,13 +30,8 @@ Here is an overview of the project structure.
 🚀 Setting Up with Poetry and Venv
 ==================================
 
-This section will explain how to initially set up the development environement for your project. For this 
-purpose two alternatives will be presented: Either setting up with ``poetry`` or ``pip``. Poetry_ is a python 
-package manager that was rather recently introduced as an alternative to pip and conda. For various technical 
-and usability reasons poetry is nowadays the recommended choice for python package management.
-
-However, regardless of which option you decide on, it makes sense to discuss the importance of python *virtual
-environments* first, as they will be used in either method.
+This section will explain how to initially set up the development environment for your project using the 
+``pip`` package manager and a virtual environment.
 
 Why Virtual Environments in Python?
 ===================================
@@ -51,36 +46,20 @@ a package is installed using
 
 for example, all the code from this package is installed into a certain folder on your system 
 
-(Recommended) Setting up with poetry
-====================================
-
-As the first step you'll have to install the Poetry_ python package globally on your system.
-
-.. code-block:: console
-
-    pip3 install poetry
-
-After the installation is complete, you'll be able to use the ``poetry`` terminal commands. To set up your project 
-first navigate into your projects top level directory (the one containing the ``pyproject.toml``) file and then execute 
-the poetry 
-
-.. code-block:: console
-
-    cd {{ cookiecutter.project_slug }}
-
-
-
-(Alternative) Setting up with pip
-=================================
-
 Setting up the virtual environment
-----------------------------------
+==================================
 
 As previously discussed it is very recommended to set up a separate virtual environment for each project you are 
 working on to avoid version conflicts.
 
-This can be done manually by using the ``venv`` python package. Simply move into the top level folder of your project 
-and create the virtual env folder like this:
+This can be done manually by using the ``venv`` python package. First make sure that the venv python package is 
+installed like this:
+
+.. code-block:: console
+
+    sudo apt install python3-venv
+
+Then, simply move into the top level folder of your project and create the virtual env folder like this:
 
 .. code-block:: console
 
@@ -97,7 +76,7 @@ from that point onwards it will not use the global environment installed on your
 of the python environment contained in the ``venv`` folder.
 
 Installing your existing code
------------------------------
+=============================
 
 After you have set up and activated your virtual environment, you can use the python related commands as before - the only 
 difference being that they now use the local versions of the virtual environment.
@@ -152,9 +131,11 @@ how the import system works. So at the beginning, a small project will most like
     ├─ models.py
     ├─ main.py
 
+Based on this structure you would do the following imports for example:
+
 .. code-block:: python
 
-    # models.py
+    # main.py
     from models import Model
     from utils import train_model
 
@@ -204,6 +185,12 @@ In a more concrete example for your own project it would work something like thi
     # concrete examples of absolute imports
     import {{ cookiecutter.project_slug }}.visualization.molecules as vis
     from {{ cookiecutter.project_slug }}.models.gnn import GcnModel
+
+=================================
+📦 Releasing your Package to PyPi
+=================================
+
+poetry 
 
 =====================
 🕰️ Package Versioning

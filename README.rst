@@ -1,5 +1,5 @@
-.. image:: https://github.com/the16thpythonist/cookiecutter_aimat/blob/master/aimat_logo.png
-    :align: middle
+.. image:: /aimat_logo.png
+    :alt: The AIMAT group logo
     :width: 50%
 
 =============================
