@@ -93,10 +93,17 @@ and executing the following command:
 
 .. code-block:: console
 
-    pip3 install -e .
+    cd {{ cookiecutter.project_slug }}
+    pip3 install -e .[dev]
 
-In this case the ``-e`` flag is of special importance, which indicates to install the local code in *editable* mode. 
-without this flag you'd have to reinstall the package every time the code is changed.
+This command warrants some further explanations:
+
+- the dot ``.`` is the linux syntax for "current folder", which tells pip to install the local files.
+- The ``-e`` flag puts the installation into *editable* mode. Instead of installing the package by making a copy, it uses 
+  those exact files in the folder directly. This way you won't have to reinstall the package every time to reflect 
+  changes in the code.
+- the ``[dev]`` addition will install the optional development dependencies as well. These will be third party packages that 
+  are required for development, such as ``pytest`` for unittesting, but don't make sense to include as a general dependency.
 
 Configuring your IDE
 ====================
@@ -190,13 +197,70 @@ In a more concrete example for your own project it would work something like thi
 📦 Releasing your Package to PyPi
 =================================
 
-poetry 
+At some point the code of your project perhaps evolves into some general functionality that some other people could 
+potentially benefit from as well. If that is the case, it might make sense to publically release your package to the 
+official python package repository PyPi_. By doing this other people will be able to install your package very 
+conveniently via pip like this:
+
+.. code-block:: console
+
+    pip3 install {{ cookiecutter.project_slug }}
+
+The following sections will explain how to achieve this.
+
+Registering with PyPi
+=====================
+
+The first thing you'll have to do is to register a new account with PyPi_ online: https://pypi.org/account/register/
+
+It is advised to note down your username and password as you'll need them later on.
+
+Publishing with Poetry
+======================
+
+On your local system, you can use the ``poetry`` command line interface to publish your package. If you've followed the 
+installation instructions above, Poetry_ should have already been installed to your virtual environment as a development 
+dependency. However, you make sure that it is installed by running:
+
+.. code-block:: console
+
+    pip3 install poetry
+
+**Build the code.** The first step you'll need to do prior to publishing is to actually build your code. This can be done 
+by running the ``build`` command like this:
+
+.. code-block:: console
+
+    poetry build
+
+**Publish the code.** Then you can publish the code using the ``publish`` command. This is where you'll need to provide the 
+username and password for your PyPi_ account.
+
+.. code-block:: console
+
+    poetry build --username='{pypi_username}' --password='{pypi_password}'
 
 =====================
 🕰️ Package Versioning
 =====================
 
-One thing that is important to keep in mind
+One thing that will be important to keep track of - especially if you are planning to release your code - 
+is the versioning of your code. To publish your code, it is required that you provide a unique version identifier.
+Once published, it is also not possible to then modify that code again - the only way to modify the published code 
+is to actually publish a new version.
+
+Even if you don't intend to release the code, it might still make sense to keep track of the version for your 
+own sake. The following sections will introduce the concept of `Semantic Versioning`_ explained.
+
+What is Versioning?
+===================
+
+One of the most commong versioning schemes is called `Semantic Versioning`_. You can read up on it on the 
+
+Start Developing Version Zero
+=============================
+
+The semantic versioning scheme presents a bit of a problem in cases...
 
 ======================
 🌐 Working with Github
@@ -219,7 +283,10 @@ Connect with Github
 
 This section compiles a number of useful resources that might be helpful during development
 
+**TO BE DONE**
 
 .. _reStructuredText: https://www.writethedocs.org/guide/writing/reStructuredText/
 .. _README: https://www.makeareadme.com/
 .. _Poetry: https://python-poetry.org/
+.. _PyPi: https://pypi.org/
+.. _`Semantic Versioning`: https://semver.org/
