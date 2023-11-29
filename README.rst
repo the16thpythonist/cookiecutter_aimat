@@ -52,7 +52,7 @@ Then install cookiecutter_ like this:
 
 .. code-block:: console
 
-    pip3 install cookiecutter
+    sudo apt install cookiecutter
 
 You can then use the cookiecutter command line interface to locally instantiate this template by using the URL of the 
 github repository.
