@@ -39,7 +39,7 @@ However, regardless of which option you decide on, it makes sense to discuss the
 environments* first, as they will be used in either method.
 
 Why Virtual Environments in Python?
------------------------------------
+===================================
 
 To explain what a virtual environment is and why it is important it makes sense to first explain the python global 
 environment. When installing python on your system it operates on a single global environment by default. Whenever 
