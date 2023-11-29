@@ -12,7 +12,6 @@ maintainers = ["{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>
 keywords = []
 packages = [
     { include = "{{ cookiecutter.project_slug }}" },
-    { include = "{{ cookiecutter.project_slug }}/scripts" },
 ]
 include = [
     "{{ cookiecutter.project_slug }}/VERSION",
